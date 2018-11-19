@@ -12,9 +12,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 		end
 		follow_redirect!
 		assert_template "users/show"
-		assert_select "div#<CSS id for error explanation>"
-		assert_select "div.<CSS class for field with error>"
-		assert_not flash.FILL_IN
+		assert_not flash.empty?
 	end
 
 end
